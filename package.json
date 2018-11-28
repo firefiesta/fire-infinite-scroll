@@ -1,0 +1,33 @@
+{
+  "name": "fire-infinite-scroll",
+  "version": "1.0.0",
+  "description": "Infinite Scroll for Ionic 3+",
+  "main": "index.js",
+  "scripts": {
+    "publishPackage": "npm run build && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firefiesta/fire-infinite-scroll.git"
+  },
+  "devDependencies": {
+    "@angular/core": "5.2.11"
+  },
+  "peerDependencies": {
+    "ionic-angular": "^3.9.2"
+  },
+  "keywords": [
+    "infinite",
+    "scroll",
+    "ionic",
+    "ionic3",
+    "slider"
+  ],
+  "author": "José Juan Sáez López",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/firefiesta/fire-infinite-scroll/issues"
+  },
+  "homepage": "https://github.com/firefiesta/fire-infinite-scroll#readme"
+}
