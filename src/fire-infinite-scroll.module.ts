@@ -3,7 +3,7 @@
  */
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { FireInfiniteScroll } from './fire-infinite-scroll.component';
+import { FireInfiniteScroll } from './components/fire-infinite-scroll.component';
 
 @NgModule({
     declarations: [
