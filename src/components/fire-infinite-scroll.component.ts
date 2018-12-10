@@ -1,6 +1,3 @@
-/**
- * Created by josesaez on 27/11/18.
- */
 import {Component, ElementRef, EventEmitter, Input, Output, AfterViewInit, OnInit, isDevMode} from '@angular/core';
 
 @Component({
