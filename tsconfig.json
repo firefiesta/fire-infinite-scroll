@@ -8,22 +8,16 @@
     "declaration": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ],
+    "lib": ["dom", "es2015"],
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": [
-    "src/**/*.ts"
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "scripts"
   ],
   "angularCompilerOptions": {
-    "genDir": "aot",
-    "debug": true
+    "skipTemplateCodegen": true
   }
 }
