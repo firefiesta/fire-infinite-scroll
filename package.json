@@ -2,14 +2,14 @@
   "name": "fire-infinite-scroll",
   "version": "1.0.3",
   "description": "Infinite Scroll for Ionic 3+",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
-  "files": "dist",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "ngc": "ngc",
-    "build": "rm -rf aot dist && npm run ngc",
-    "publishPackage": "npm run build && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "ngc",
+    "lint": "tslint \"src/**/*.ts\"",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "runAndPublish": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "rxjs": "^5.5.11",
     "tslint": "^5.11.0",
     "typescript": "2.4.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "ngc": "^1.0.0"
   },
   "peerDependencies": {
     "ionic-angular": "^3.9.2"
@@ -46,8 +47,5 @@
   "bugs": {
     "url": "https://github.com/firefiesta/fire-infinite-scroll/issues"
   },
-  "homepage": "https://github.com/firefiesta/fire-infinite-scroll#readme",
-  "dependencies": {
-    "ngc": "^1.0.0"
-  }
+  "homepage": "https://github.com/firefiesta/fire-infinite-scroll#readme"
 }
