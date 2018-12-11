@@ -1,13 +1,29 @@
-import {Component, ElementRef, EventEmitter, Input, Output, AfterViewInit, OnInit, isDevMode} from '@angular/core';
+import {
+    Component,
+    ElementRef,
+    EventEmitter,
+    Input,
+    Output,
+    AfterViewInit,
+    OnInit,
+    isDevMode
+} from '@angular/core';
 
 @Component({
     selector: 'fire-infinite-scroll',
-    templateUrl: 'fire-infinite-scroll.html'
+    template: `<ion-grid *ngIf="!disabled">
+        <ion-row>
+            <ion-col col-12 text-center>
+                <ion-spinner *ngIf="!image" [name]="iconName"></ion-spinner>
+                <img *ngIf="image" [class]="image?.class"  [src]="image?.url" [alt]="image?.alt">
+                <p *ngIf="text">{{text}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>`
 })
 export class FireInfiniteScroll implements AfterViewInit, OnInit
 {
     isLoadedIntersectObserver : boolean = false;
-
     @Input() disabled : boolean = true;
     @Input() iconName: string = 'crescent';
     @Input() image: {class_name: string, url: string, alt: string};
@@ -47,7 +63,11 @@ export class FireInfiniteScroll implements AfterViewInit, OnInit
 
             let observer = new IntersectionObserver(function (changes, observer) {
                 changes.forEach(change => {
-                    self.onInfinite.emit(change.isIntersecting);
+                    let isIntersecting = false;
+                    if (change.intersectionRatio > 0) {
+                        isIntersecting = true;
+                    }
+                    self.onInfinite.emit(isIntersecting);
                 });
             }, options);
 

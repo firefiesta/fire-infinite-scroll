@@ -64,3 +64,4 @@ typings/
 dist/
 aot/
 package-lock.json
+src/**/*.js

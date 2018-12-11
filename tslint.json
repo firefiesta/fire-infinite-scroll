@@ -9,7 +9,8 @@
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "lib": ["dom", "es2015"],
-    "outDir": "dist"
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "exclude": [
     "node_modules",
@@ -17,15 +18,6 @@
     "scripts"
   ],
   "angularCompilerOptions": {
-    "genDir": "aot"
-  },
-  "rules": {
-    "no-duplicate-variable": true,
-    "no-unused-variable": [
-      true
-    ]
-  },
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ]
+    "skipTemplateCodegen": true
+  }
 }
