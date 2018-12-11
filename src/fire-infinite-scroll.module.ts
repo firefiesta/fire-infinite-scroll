@@ -1,22 +1,24 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { IonicModule } from 'ionic-angular';
 import { FireInfiniteScroll } from './components/fire-infinite-scroll.component';
+//import { IonicModule } from 'ionic-angular';
+import { FireInfiniteScrollProvider } from './providers/fire-infinite-scroll.provider';
 
 @NgModule({
+    //imports: [IonicModule],
     declarations: [
         FireInfiniteScroll
     ],
-    imports: [IonicModule],
     exports: [
         FireInfiniteScroll
     ]
 })
 export class FireInfiniteScrollModule
 {
-    static forRoot() : ModuleWithProviders {
+    static forRoot(): ModuleWithProviders {
         return {
             ngModule: FireInfiniteScrollModule,
-            providers: []
+            providers: [ FireInfiniteScrollProvider ]
         };
     }
 }
+
