@@ -61,7 +61,6 @@ typings/
 .next
 
 .idea
-dist/
 aot/
 package-lock.json
 src/**/*.js
