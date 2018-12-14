@@ -6,6 +6,8 @@ import {
     Output,
     AfterViewInit,
     OnInit,
+    Inject,
+    forwardRef,
     isDevMode
 } from '@angular/core';
 
@@ -23,14 +25,14 @@ import {
 })
 export class FireInfiniteScroll implements AfterViewInit, OnInit
 {
-    isLoadedIntersectObserver : boolean = false;
-    @Input() disabled : boolean = true;
+    isLoadedIntersectObserver: boolean = false;
+    @Input() disabled: boolean = true;
     @Input() iconName: string = 'crescent';
     @Input() image: {class_name: string, url: string, alt: string};
     @Input() text: any = null;
-    @Input() root : any = null;
-    @Input() rootMargin : any = '0px';
-    @Input() threshold : any = 1.0;
+    @Input() root: any = null;
+    @Input() rootMargin: any = '0px';
+    @Input() threshold: any = 1.0;
     @Output() onInfinite = new EventEmitter();
 
     /**
@@ -38,9 +40,8 @@ export class FireInfiniteScroll implements AfterViewInit, OnInit
      * @param element
      */
     constructor(
-        public element : ElementRef
+        @Inject(forwardRef(() => ElementRef)) public element: ElementRef
     ){}
-
 
     ngOnInit()
     {

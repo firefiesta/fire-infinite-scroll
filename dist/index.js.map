@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA,cAAc,+BAA+B,CAAC;AAC9C,cAAc,6CAA6C,CAAC;AAC5D,cAAc,2CAA2C,CAAC","sourcesContent":["export * from './fire-infinite-scroll.module';\nexport * from './components/fire-infinite-scroll.component';\nexport * from './providers/fire-infinite-scroll.provider';\n"]}
