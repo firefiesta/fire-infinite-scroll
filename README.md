@@ -74,21 +74,22 @@ export class SharedModule {}
 > (optional) Default crescent
 ##### text
 > (optional) Text to show below the icon or image.
-#### image
+##### image
 > (optional) If you want to show an image instead of an ionic icon, you must pass an object image with the following data : 
 ```image: {class_name: string, url: string, alt: string}```
-### root
+##### root
 > (optional) The element that is used as the viewport for checking visiblity of the target. Must be the ancestor of the target. Defaults to the browser viewport if not specified or if null. Default this (element fire-infinite-scroll)
-### rootMargin
+##### rootMargin
 > (optional) Margin around the root. Can have values similar to the CSS margin property, e.g. "10px 20px 30px 40px" (top, right, bottom, left). The values can be percentages. This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections. Margin around root. Values are similar to css property. Unitless values not allowed. Default 0px
-### threshold
+##### threshold
 > (optional) Visible amount of item shown in relation to root. A threshold of 1.0 means that when 100% of the target is visible within the element specified by the root option, the callback is invoked.
  Default 1.0
 
 ### Outputs
 
-#### onInfinite
+##### onInfinite
 > Return true when fire-infinite-scroll is visible, and false when it is not.
+Use (onInfinite)="yourFunction($event)"
 
 
 
@@ -100,7 +101,7 @@ you must install IntersectionObserver polyfill
 npm install intersection-observer --save
 ```
 
-and add to `maint.ts`
+and add to `main.ts`
 
 ```
 import 'intersection-observer/intersection-observer';
