@@ -2,7 +2,7 @@
 Infinite Scroll for Ionic 3+
 
 
-`I created this project because ion-infinite-scroll native ionic did not work properly within Sliders since it was necessary to put an ion-content inside the slider which made the scroll of the Slider not work correctly. In the Examples section, you will find one with Sliders.
+I created this project because ion-infinite-scroll native ionic did not work properly within Sliders since it was necessary to put an ion-content inside the slider which made the scroll of the Slider not work correctly. In the Examples section, you will find one with Sliders.
 
 ##Compatibility
 Ionic 3+
@@ -88,7 +88,7 @@ export class SharedModule {}
 ### Outputs
 
 #### onInfinite
-> Return true when fir-infinite-scroll is visible, and false when it is not.
+> Return true when fire-infinite-scroll is visible, and false when it is not.
 
 
 
@@ -100,7 +100,7 @@ you must install IntersectionObserver polyfill
 npm install intersection-observer --save
 ```
 
-y agregarlo a  `maint.ts`
+and add to `maint.ts`
 
 ```
 import 'intersection-observer/intersection-observer';
@@ -120,7 +120,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.
                     <ion-col col-md-6 col-12 *ngFor="let items of listItems">
                         <custom-component [item]="item"></custom-component>
                     </ion-col>
-                    <ion-col col-12 *ngIf="items?.length === 0">
+                    <ion-col col-12 *ngIf="listItems?.length === 0">
                         <p ion-text class="text-center" color="primary">
                             No items
                         </p>
