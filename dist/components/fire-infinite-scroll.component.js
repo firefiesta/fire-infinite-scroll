@@ -1,12 +1,3 @@
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 import { Component, ElementRef, EventEmitter, Input, Output, Inject, forwardRef, isDevMode } from '@angular/core';
 var FireInfiniteScroll = (function () {
     /**
@@ -30,12 +21,20 @@ var FireInfiniteScroll = (function () {
     /**
      *
      */
-    FireInfiniteScroll.prototype.ngAfterViewInit = function () {
+    /**
+         *
+         */
+    FireInfiniteScroll.prototype.ngAfterViewInit = /**
+         *
+         */
+    function () {
         var self = this;
         if (this.isLoadedIntersectObserver) {
             var options = {
                 root: this.root,
+                // relative to document viewport
                 rootMargin: this.rootMargin,
+                // margin around root. Values are similar to css property. Unitless values not allowed
                 threshold: this.threshold // visible amount of item shown in relation to root
             };
             var observer = new IntersectionObserver(function (changes, observer) {
@@ -53,7 +52,13 @@ var FireInfiniteScroll = (function () {
     /**
      *
      */
-    FireInfiniteScroll.prototype.checkisLoadedIntersectObserver = function () {
+    /**
+         *
+         */
+    FireInfiniteScroll.prototype.checkisLoadedIntersectObserver = /**
+         *
+         */
+    function () {
         if ('IntersectionObserver' in window) {
             // supported
             this.isLoadedIntersectObserver = true;
@@ -73,37 +78,26 @@ var FireInfiniteScroll = (function () {
             }
         }
     };
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "disabled", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "iconName", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "image", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "text", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "root", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "rootMargin", void 0);
-    __decorate([
-        Input()
-    ], FireInfiniteScroll.prototype, "threshold", void 0);
-    __decorate([
-        Output()
-    ], FireInfiniteScroll.prototype, "onInfinite", void 0);
-    FireInfiniteScroll = __decorate([
-        Component({
-            selector: 'fire-infinite-scroll',
-            template: "<ion-grid *ngIf=\"!disabled\">\n        <ion-row>\n            <ion-col col-12 text-center>\n                <ion-spinner *ngIf=\"!image\" [name]=\"iconName\"></ion-spinner>\n                <img *ngIf=\"image\" [class]=\"image?.class\"  [src]=\"image?.url\" [alt]=\"image?.alt\">\n                <p *ngIf=\"text\">{{text}}</p>\n            </ion-col>\n        </ion-row>\n    </ion-grid>"
-        }),
-        __param(0, Inject(forwardRef(function () { return ElementRef; })))
-    ], FireInfiniteScroll);
+    FireInfiniteScroll.decorators = [
+        { type: Component, args: [{
+                    selector: 'fire-infinite-scroll',
+                    template: "<ion-grid *ngIf=\"!disabled\">\n        <ion-row>\n            <ion-col col-12 text-center>\n                <ion-spinner *ngIf=\"!image\" [name]=\"iconName\"></ion-spinner>\n                <img *ngIf=\"image\" [class]=\"image?.class\"  [src]=\"image?.url\" [alt]=\"image?.alt\">\n                <p *ngIf=\"text\">{{text}}</p>\n            </ion-col>\n        </ion-row>\n    </ion-grid>"
+                },] },
+    ];
+    /** @nocollapse */
+    FireInfiniteScroll.ctorParameters = function () { return [
+        { type: ElementRef, decorators: [{ type: Inject, args: [forwardRef(function () { return ElementRef; }),] },] },
+    ]; };
+    FireInfiniteScroll.propDecorators = {
+        "disabled": [{ type: Input },],
+        "iconName": [{ type: Input },],
+        "image": [{ type: Input },],
+        "text": [{ type: Input },],
+        "root": [{ type: Input },],
+        "rootMargin": [{ type: Input },],
+        "threshold": [{ type: Input },],
+        "onInfinite": [{ type: Output },],
+    };
     return FireInfiniteScroll;
 }());
 export { FireInfiniteScroll };
